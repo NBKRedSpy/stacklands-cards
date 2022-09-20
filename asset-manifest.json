@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "./test_1901/static/css/main.0f0536b7.css",
+    "main.js": "./test_1901/static/js/main.0af4aef0.js",
+    "static/media/BetmRounded-Light.woff": "./test_1901/static/media/BetmRounded-Light.ba8957d21689c82dc338.woff",
+    "static/media/BetmRounded-Regular.woff": "./test_1901/static/media/BetmRounded-Regular.36c02209da60ce78b247.woff",
+    "index.html": "./test_1901/index.html",
+    "main.0f0536b7.css.map": "./test_1901/static/css/main.0f0536b7.css.map",
+    "main.0af4aef0.js.map": "./test_1901/static/js/main.0af4aef0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0f0536b7.css",
+    "static/js/main.0af4aef0.js"
+  ]
+}
