@@ -16,7 +16,7 @@ export class CardDataService {
     {
         if(!this.data)
         {
-             const response = await fetch("../data/StackLandsCards.json")
+             const response = await fetch("data/StackLandsCards.json")
              if(!response.ok)
              {
                 throw response.statusText
