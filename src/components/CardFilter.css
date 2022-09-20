@@ -1,0 +1,11 @@
+.filter-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+label {
+    padding-right: .5em;
+}
+.filter-input{
+    flex: 1;
+}
