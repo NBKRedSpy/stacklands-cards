@@ -3,7 +3,7 @@ import Card from './components/Card'
 import { CardDataService } from './services/CardDataService';
 import CardFilter from './components/CardFilter'
 import * as c from './classes/Card'
-import React, { ChangeEvent } from 'react'
+import React from 'react'
 
 const cardDataService = new CardDataService();
 
