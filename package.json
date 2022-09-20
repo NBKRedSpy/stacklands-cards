@@ -1,7 +1,7 @@
 {
   "name": "stacklands-cards",
   "version": "0.1.0",
-  "hoempage": "https://nbkredspy.github.io/stacklands-cards/",
+  "homepage": "https://nbkredspy.github.io/stacklands-cards/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
