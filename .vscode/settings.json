@@ -1,0 +1,9 @@
+{
+    "search.exclude": {
+        "**/build": true,
+        "**/package*.json": true
+    },
+    "cSpell.words": [
+        "thenby"
+    ]
+}
