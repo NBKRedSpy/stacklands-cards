@@ -1,4 +1,6 @@
 export class CardSearchResult {
+    //The search has not occurred.
+    static NoSearch: string = ""
     //No match was found
     static NotFound: string = "NotFound"
     //The search matched the description
@@ -31,6 +33,7 @@ export class CardSearchResult {
         case this.Other:
           return 2;
         case this.NotFound:
+        case this.NoSearch:
           return 3;
         default:
           throw new Error("value not found");
