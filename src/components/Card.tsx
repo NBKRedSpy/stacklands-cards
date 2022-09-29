@@ -11,9 +11,11 @@ export default function Card(props: {card: c.Card})
         return (
             <div key={card.key} className={`container ${cssStyleName}-body`}>
                 <div className={`header ${cssStyleName}-header`} >{card.name}</div>
-                {card.resources.map((resource : CardResource, index : number) => (
-                        <div key={index} >{resource.count}x {resource.resource}</div>
-                ))}
+                <div className="card-body">
+                    {card.resources.map((resource : CardResource, index : number) => (
+                            <div key={index} >{resource.count}x {resource.resource}</div>
+                    ))}
+                </div>
             </div>
         );
 }

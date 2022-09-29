@@ -1,3 +1,6 @@
+
+import './CardResults.css'
+
 import { CardSearchResult } from "../../classes/CardSearchResult";
 import Cards from "./Cards";
 import UiCard from "./UiCard";
@@ -23,14 +26,16 @@ import UiCard from "./UiCard";
       cardDataGroups = new Map<string, UiCard[]>();
     }
   
-    cardDataGroups.forEach((value, key) => {
+    cardDataGroups.forEach((cardGroup, key) => {
       if (key === CardSearchResult.Other) {
-        cardListJsx.push(<div className="resource-match">▼ Resource Match ▼</div>);
+        cardListJsx.push(<div key="{'resource-match'}" className="resource-match">▼ Resource Match ▼</div>);
       }
-      cardListJsx.push(<Cards cards={value}></Cards>);
+      cardListJsx.push(<Cards key={key} cards={cardGroup}></Cards>);
     });
+
     
-    return (<div>{cardListJsx}</div>)
+    
+    return (<div key="{props.cardData ? props.cardData?.length : -99}" className={"card-results"} >{cardListJsx}</div>)
   }
   
   

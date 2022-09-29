@@ -1,25 +1,22 @@
 .container {
     
-    border: solid 5px;
-    border-radius: 5px;
     display: inline-block;
     vertical-align: top;
-    min-height: 7em;
-    width: 200px;
-    margin: 5px 5px 5px 0px;
+    width: 135px;
+    margin: 2px;
     font-family: "Betm";
-
+    padding: 0px;
 }
-
-/* .description {
-    padding: 10px 0px
-} */
 
 .header {
+    border-image: url('../images/raggedbox-min.svg');
+    border-image-slice: 100;
+    border-width: 7px;
+    border-style: solid;
+    padding: 0x;
     font-weight: bold;
-    border-bottom: 3px solid black;
-
 }
+
 .resource-header {
     background-color: hsla(216,21%,50%);
 }
@@ -40,5 +37,16 @@
 
 .food-body{
     background-color: hsl(27,75%,61%,50%)
+}
+
+.card-body{
+    border-image: url('../images/raggedbox-min.svg');
+    border-image-slice: 100;
+    border-width: 0px 7px 7px 7px;
+    border-style: solid;
+    padding: 0x;
+    padding: 5px 2px 2px 2px;
+    min-height: 6rem;
+    
 }
 
