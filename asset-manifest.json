@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/stacklands-cards/static/css/main.9491553d.css",
-    "main.js": "/stacklands-cards/static/js/main.28599d59.js",
-    "static/media/BetmRounded-Light.woff": "/stacklands-cards/static/media/BetmRounded-Light.ba8957d21689c82dc338.woff",
-    "static/media/BetmRounded-Regular.woff": "/stacklands-cards/static/media/BetmRounded-Regular.36c02209da60ce78b247.woff",
-    "index.html": "/stacklands-cards/index.html"
+    "main.css": "./static/css/main.fb1ba037.css",
+    "main.js": "./static/js/main.ff902698.js",
+    "static/media/raggedbox-min.svg": "./static/media/raggedbox-min.45698a2f8a8591f2fc0f.svg",
+    "static/media/BetmRounded-Light.woff": "./static/media/BetmRounded-Light.ba8957d21689c82dc338.woff",
+    "static/media/BetmRounded-Regular.woff": "./static/media/BetmRounded-Regular.36c02209da60ce78b247.woff",
+    "static/media/star-empty.svg": "./static/media/star-empty.d4c31ca363b68f8974fba1eb3d4f5e57.svg",
+    "static/media/star-filled.svg": "./static/media/star-filled.b406dbe56b2888c84b72d2ebbdb6e367.svg",
+    "index.html": "./index.html"
   },
   "entrypoints": [
-    "static/css/main.9491553d.css",
-    "static/js/main.28599d59.js"
+    "static/css/main.fb1ba037.css",
+    "static/js/main.ff902698.js"
   ]
 }
