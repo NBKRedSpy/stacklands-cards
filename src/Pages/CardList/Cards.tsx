@@ -1,21 +1,24 @@
 import './Cards.css'
 
-import Card from "../../components/Card"
-import UiCard from "./UiCard"
+import Card from "./Card"
+import UiCard from "./classes/UiCard"
 
 
 /**
- * Renders an array of cards
- * @param state 
+ * Renders an array of cards.  This used for card grouping.
+ * @param props 
  * @returns 
  */
-export default function Cards(state: {cards : UiCard[]}) {
+export default function Cards(props: {
+  cards : UiCard[]
+  onCardPinned: (card : UiCard) => void
+}) {
     return (
-      <div className="{'cards-container'}">
+      <div >
         {(() =>  {
   
-          if(state.cards && state.cards?.length !== 0) {
-            return <div>{state.cards.map(x => <Card key={x.key} card={x.card}/>)}</div>
+          if(props.cards && props.cards?.length !== 0) {
+            return <div className="cards-container">{props.cards.map(x => <Card onCardPinned={props.onCardPinned} key={x.key} card={x}/>)}</div>
           }
           })()}
       </div>  

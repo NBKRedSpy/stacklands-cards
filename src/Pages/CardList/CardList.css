@@ -1,0 +1,12 @@
+.filter-input{
+    width: 100%;
+}
+
+.clear-filter{
+    margin-left: 1em;
+    cursor: pointer;
+}
+
+.favorites-separator {
+    cursor: pointer;
+}

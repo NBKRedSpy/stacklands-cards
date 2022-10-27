@@ -3,16 +3,22 @@ import './CardResults.css'
 
 import { CardSearchResult } from "../../classes/CardSearchResult";
 import Cards from "./Cards";
-import UiCard from "./UiCard";
+import UiCard from "./classes/UiCard";
+import React from 'react';
+import Separator from './Separator';
 
 /**
- * The main body of the CardList page.  Contains the Card groupings 
+ * The main body of the CardList page.  Contains the Card groupings
  * which may include a divider indicating which cards have resources
  * that matched the filter.
  * @param props 
  * @returns 
  */
- export default function CardResults(props : {cardData: UiCard[] | undefined} ) {
+ export default function CardResults(props : {
+    cardData: UiCard[] | undefined,
+    onCardPinned: (card : UiCard) => void
+  }) {
+    
     let cardDataGroups: Map<string, UiCard[]>;
     const cardListJsx = new Array<JSX.Element>();
   
@@ -27,15 +33,27 @@ import UiCard from "./UiCard";
     }
   
     cardDataGroups.forEach((cardGroup, key) => {
-      if (key === CardSearchResult.Other) {
-        cardListJsx.push(<div key="{'resource-match'}" className="resource-match">▼ Resource Match ▼</div>);
-      }
-      cardListJsx.push(<Cards key={key} cards={cardGroup}></Cards>);
-    });
 
+      let separatorText: string;
+
+       switch(key) {
+        case CardSearchResult.NoSearch:
+          separatorText = "All Cards"
+          break
+        case CardSearchResult.Other:
+          separatorText = "Resource match"
+          break
+        default:
+          separatorText = "Name Match"
+      }
+      
+      cardListJsx.push(<Separator text={separatorText} key={separatorText} />)
+
+      cardListJsx.push(<Cards onCardPinned={props.onCardPinned} key={key} cards={cardGroup}></Cards>);
+    });
     
-    
-    return (<div key="{props.cardData ? props.cardData?.length : -99}" className={"card-results"} >{cardListJsx}</div>)
+    return (<div key={Math.random()} className={"card-results"} >{cardListJsx}</div>)
+
   }
   
   

@@ -9,12 +9,16 @@
 }
 
 .header {
-    border-image: url('../images/raggedbox-min.svg');
+    border-image: url('../../images/raggedbox-min.svg');
     border-image-slice: 100;
     border-width: 7px;
     border-style: solid;
     padding: 0x;
     font-weight: bold;
+
+    display:flex;
+    justify-content: space-between
+
 }
 
 .resource-header {
@@ -40,7 +44,7 @@
 }
 
 .card-body{
-    border-image: url('../images/raggedbox-min.svg');
+    border-image: url('../../images/raggedbox-min.svg');
     border-image-slice: 100;
     border-width: 0px 7px 7px 7px;
     border-style: solid;
