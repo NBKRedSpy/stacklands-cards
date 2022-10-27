@@ -48,7 +48,7 @@ export default function CardList() {
       </div>
       {pinnedCards.length !== 0 && 
       <div>
-        <span className="favorites-separator" onClick={toggleFavorites}><Separator text="Favorites"/></span><span className="clear-filter" onClick={handleClearFilter}>&#10006;</span>
+        <span className="favorites-separator" onClick={toggleFavorites}><Separator text="Favorites"/></span><span className="clear-favorites" onClick={handleClearFavorites}>&#10006;</span>
         <div className="favorite-cards">
           <Cards cards={pinnedCards} onCardPinned={handleCardPinned}></Cards>
         </div>
@@ -65,13 +65,20 @@ export default function CardList() {
 
     
   }
-  function handleClearFilter(event: React.MouseEvent<HTMLSpanElement>) {
-    setUiCards(prev => prev.map(x=> {
+  function handleClearFavorites(event: React.MouseEvent<HTMLSpanElement>) {
+
+    setUiCards(prev => {
+        const newCardArray = prev.map(x=> {
         x.isPinned = false; 
         return x;}
-      ));
+      )
 
-      event.preventDefault()
+      userSessionService.setPinnedCards(newCardArray)
+
+      return newCardArray;
+    })
+
+    event.preventDefault()
     
   }
 
