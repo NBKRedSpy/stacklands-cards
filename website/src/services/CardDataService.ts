@@ -24,11 +24,12 @@ export class CardDataService {
              const responseText = await response.text(); 
 
              this.data = JSON.parse(responseText, (key,value) => {
-                if(!isNaN(Number.parseInt(key)) &&  value.name )
+                if(!isNaN(Number.parseInt(key)) && value.type && value.name )
                 {
                     return new Card({key: createGuid(), ...value});
                 }
-                if(value.resource && value.count)
+
+                if(value && value.name && value.count)
                 {
                     return new CardResource(value);
                 }

@@ -9,18 +9,22 @@ export class Card {
     key : string
     name : string
     type : string
+    colorHeader : string | null = null
+    colorBody : string | null = null
 
     /** 
      * An array of CardResources required for this card.
      */
     resources : CardResource[]
 
-    constructor({key,name,type,resources} : Card)
+    constructor({key,name,type,resources,colorHeader,colorBody} : Card)
     {
       this.key = key;
       this.name = name;
       this.type = type;
       this.resources = resources;
+      this.colorHeader = colorHeader;
+      this.colorBody = colorBody;
     }
 
     /**
@@ -40,7 +44,7 @@ export class Card {
       
       const found = this.resources.some((resource) => 
       {
-          return regEx.test(resource.resource);
+          return regEx.test(resource.name);
       });
 
       return found ? CardSearchResult.Other : CardSearchResult.NotFound;

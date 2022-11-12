@@ -5,7 +5,12 @@
     width: 135px;
     margin: 2px;
     font-family: "Betm";
+    font-size: 1em;
     padding: 0px;
+}
+
+.high-contrast-text {
+    color: white;
 }
 
 .header {
@@ -17,30 +22,9 @@
     font-weight: bold;
 
     display:flex;
-    justify-content: space-between
+    justify-content: space-between;
+    height: 2em;
 
-}
-
-.resource-header {
-    background-color: hsla(216,21%,50%);
-}
-.resource-body {
-    background-color: hsla(216,21%,50%, 50%);
-}
-
-.structure-header {
-    background-color: hsla(12,77%,73%);
-}
-.structure-body {
-    background-color: hsla(12,77%,73%, 50%);
-}
-
-.food-header {
-    background-color: hsl(27,75%,61%)
-}
-
-.food-body{
-    background-color: hsl(27,75%,61%,50%)
 }
 
 .card-body{
