@@ -13,12 +13,13 @@
     color: white;
 }
 
-.header {
+.header,.card-body {
     border-image: url('../../images/raggedbox-min.svg');
     border-image-slice: 100;
+}
+.header {
     border-width: 7px;
     border-style: solid;
-    padding: 0x;
     font-weight: bold;
 
     display:flex;
@@ -28,11 +29,8 @@
 }
 
 .card-body{
-    border-image: url('../../images/raggedbox-min.svg');
-    border-image-slice: 100;
     border-width: 0px 7px 7px 7px;
     border-style: solid;
-    padding: 0x;
     padding: 5px 2px 2px 2px;
     min-height: 6rem;
     
