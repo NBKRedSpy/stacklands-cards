@@ -1,5 +1,8 @@
 import { CardResource } from "./CardResource"
 import { CardSearchResult } from "./CardSearchResult"
+import * as ci from '../services/CardDataService'
+
+
 
 
 /**
@@ -12,12 +15,13 @@ export class Card {
     colorHeader : string | null = null
     colorBody : string | null = null
 
+
     /** 
      * An array of CardResources required for this card.
      */
     resources : CardResource[]
 
-    constructor({key,name,type,resources,colorHeader,colorBody} : Card)
+    constructor({key,name,type,resources,colorHeader,colorBody}: ci.Card )
     {
       this.key = key;
       this.name = name;

@@ -26,7 +26,7 @@ export default function CardList() {
 
   React.useEffect(() => {
     async function cb() {
-      const cardData = await cardDataService.getAll();
+      const cardData = cardDataService.getAll();
       const createdUiCards = createUiCards(cardData);
 
       

@@ -1,3 +1,6 @@
+* {
+    user-select: none;
+}
 .filter-input{
     width: 100%;
 }

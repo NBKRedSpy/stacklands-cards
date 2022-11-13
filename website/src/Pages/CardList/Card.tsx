@@ -46,9 +46,9 @@ export default function Card(props: {
     
 
     return (
-        <div key={card!.key} className={`container ${isDarkColor ? "high-contrast-text" : ''}`}>
+        <div onClick={pinnedClick} key={card!.key} className={`container ${isDarkColor ? "high-contrast-text" : ''}`}>
             <div className={`header`} style={headerColorStyle}  >{card!.name}
-                <Pinned isPinned={uiCard.isPinned!} pinnedClick={pinnedClick} />
+                <Pinned isPinned={uiCard.isPinned!} pinnedClick={null}/>
             </div>
             <div className="card-body" style={bodyColorStyle} >
                 {card!.resources.map((resource : CardResource, index : number) => (

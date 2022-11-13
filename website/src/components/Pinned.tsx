@@ -11,12 +11,20 @@ import "./Pinned.css"
  */
 export default function Pinned(props: {
     isPinned: boolean, 
-    pinnedClick: React.MouseEventHandler,
+    pinnedClick: React.MouseEventHandler | null,
 }) {
 
+        function handlePinned(event: React.MouseEvent<HTMLImageElement>) {
+                if(props.pinnedClick !== null)
+                {
+                        props.pinnedClick(event);
+                }
+
+                event.preventDefault();
+        }
         const pinnedImage = props.isPinned ? starFilled : starEmpty
 
         return(
-                <img className="pinned-image" alt="favorite toggle" src={pinnedImage} width={16} height={16} onClick={props.pinnedClick} />
+                <img className="pinned-image" alt="favorite toggle" src={pinnedImage} width={16} height={16} onClick={handlePinned} />
         )
 }

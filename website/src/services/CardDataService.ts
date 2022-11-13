@@ -1,51 +1,51 @@
 import createGuid from "./GuidService";
-import {Card} from "../classes/Card"
-import {CardResource} from "../classes/CardResource"
 import {ciSortFunction} from "../utils/util"
+import * as cd from '../data/StackLandsCards'
+import * as clc from '../classes/Card'
+
+export interface Card {
+    key : string
+    name : string
+    type : string
+    colorHeader : string | null
+    colorBody : string | null
+    resources : CardResource[]
+  }
+  
+  export interface CardResource {
+    name : string
+    count : number
+  }
 
 export class CardDataService {
-    data : Card[] | undefined
+    data : clc.Card[] | undefined
 
     constructor()
     {
         this.data = undefined;
     }
 
-    async initData() : Promise<Card[]>
+    initData() : clc.Card[]
     {
         if(!this.data)
         {
-             const response = await fetch(`${process.env.PUBLIC_URL}/data/StackLandsCards.json`)
-             if(!response.ok)
-             {
-                throw response.statusText
-             }
+            this.data = new Array<clc.Card>()
 
-             const responseText = await response.text(); 
+            for (const value of cd.cardData) {
 
-             this.data = JSON.parse(responseText, (key,value) => {
-                if(!isNaN(Number.parseInt(key)) && value.type && value.name )
-                {
-                    return new Card({key: createGuid(), ...value});
-                }
-
-                if(value && value.name && value.count)
-                {
-                    return new CardResource(value);
-                }
-                return value;
-             });
+                const card = new clc.Card({key: createGuid(), ...value});
+                this.data.push(card);
+            }
                 
             this.data = this.data!.sort((a,b) => ciSortFunction(a.name, b.name));
-            
        }
         
         return this.data;
     }
 
-    async getAll() : Promise<Card[]>
+    getAll() : clc.Card[]
     {
-        return await this.initData();
+        return this.initData();
     }
 }
 

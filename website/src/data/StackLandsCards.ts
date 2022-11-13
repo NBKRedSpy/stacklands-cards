@@ -1,4 +1,4 @@
-[
+export const cardData = [
 	{
 	  "id": "blueprint_animalpen",
 	  "name": "Animal Pen",
