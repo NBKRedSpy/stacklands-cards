@@ -1,7 +1,7 @@
-export default function Separator(props: {text:string}) {
+export default function Separator(props: {text:string, className:string}) {
 
     return (
-        <span>▼ {props?.text} ▼</span>
+        <span className={props.className} >▼ {props.text} ▼</span>
     )
     
 }

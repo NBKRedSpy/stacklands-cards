@@ -24,23 +24,17 @@ export default function Card(props: {
         if(props.onCardPinned) props.onCardPinned(uiCard)
     }
 
-    let headerColorStyle = {}
-    let bodyColorStyle = {}
-
     let isDarkColor = false
 
-    if(card?.colorBody)
-    {
-        headerColorStyle = {
-            backgroundColor: card.colorHeader
-        }
-
-        bodyColorStyle = {
-            backgroundColor: card.colorBody
-        }
-        
-        isDarkColor = isRgbDarkColor(card.colorHeader!);        
+    const headerColorStyle = {
+        backgroundColor: card?.colorHeader ?? "rgba(215,213,168, 50%)"
     }
+
+    const bodyColorStyle = {
+        backgroundColor: card?.colorBody ?? "rgba(215,213,168, 100%)"
+    }
+    
+    isDarkColor = isRgbDarkColor(headerColorStyle.backgroundColor);        
 
     
     
@@ -59,13 +53,22 @@ export default function Card(props: {
     );
 }
 
+/**
+ * Returns true if the color is considered dark.
+ * @param rgbString 
+ * @returns 
+ * Note - this come from this stack overflow post:  https://stackoverflow.com/questions/22603510/is-this-possible-to-detect-a-colour-is-a-light-or-dark-colour
+ * Which references: 
+ */
 function isRgbDarkColor(rgbString : string) {
     let rgba = rgbString.match(/\d+/g)!
     
     rgba.pop();
 
-    const sum = rgba.reduce((total, current) => total + Number.parseInt(current),0)
+    const [r,g,b] = rgba.map(x=> Number.parseInt(x))
 
-    return (sum / 3 <= 120)
-    
+    //This is known as the "Hue Saturation Perception" equation
+    //http://alienryderflex.com/hsp.html
+    const hsp = Math.sqrt(0.299 * (r * r) + 0.587 * (g * g) + 0.114 * (b * b))
+    return hsp < 127;
 }
