@@ -47,7 +47,7 @@ import Separator from './Separator';
           separatorText = "Name Match"
       }
       
-      cardListJsx.push(<Separator text={separatorText} key={separatorText} />)
+      cardListJsx.push(<Separator className="separator" text={separatorText} key={separatorText} />)
 
       cardListJsx.push(<Cards onCardPinned={props.onCardPinned} key={key} cards={cardGroup}></Cards>);
     });

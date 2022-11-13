@@ -48,7 +48,7 @@ export default function CardList() {
       </div>
       {pinnedCards.length !== 0 && 
       <div>
-        <span className="favorites-separator" onClick={toggleFavorites}><Separator text="Favorites"/></span><span className="clear-favorites" onClick={handleClearFavorites}>&#10006;</span>
+        <span onClick={toggleFavorites} ><Separator className="separator favorites-separator" text="Favorites"/></span><span className="clear-favorites" onClick={handleClearFavorites}>&#10006;</span>
         <div className="favorite-cards">
           <Cards cards={pinnedCards} onCardPinned={handleCardPinned}></Cards>
         </div>
