@@ -11,7 +11,6 @@ import * as ci from '../services/CardDataService'
 export class Card {
     key : string
     name : string
-    type : string
     colorHeader : string | null = null
     colorBody : string | null = null
 
@@ -21,11 +20,10 @@ export class Card {
      */
     resources : CardResource[]
 
-    constructor({key,name,type,resources,colorHeader,colorBody}: ci.Card )
+    constructor({key,name,resources,colorHeader,colorBody}: ci.Card )
     {
       this.key = key;
       this.name = name;
-      this.type = type;
       this.resources = resources;
       this.colorHeader = colorHeader;
       this.colorBody = colorBody;

@@ -6,7 +6,6 @@ import * as clc from '../classes/Card'
 export interface Card {
     key : string
     name : string
-    type : string
     colorHeader : string | null
     colorBody : string | null
     resources : CardResource[]
