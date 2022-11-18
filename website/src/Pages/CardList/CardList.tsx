@@ -44,7 +44,7 @@ export default function CardList() {
   return (
     <div>
       <div>
-        <input autoFocus type="text" name='filterInput' className="filter-input" onChange={filterChangeEvent} placeholder='filter'></input>
+        <input autoFocus type="text" name='filterInput' className="filter-input" onFocus={handleFocusEvent}  onChange={filterChangeEvent} placeholder='filter'></input>
       </div>
       {pinnedCards.length !== 0 && 
       <div>
@@ -58,6 +58,11 @@ export default function CardList() {
     </div>
   )
 
+
+  function handleFocusEvent(event: React.FocusEvent<HTMLInputElement>)
+  {
+      event.target.select()
+  }
   function toggleFavorites() {
     var favoriteCards = (document.querySelector(".favorite-cards") as HTMLElement)!
 
